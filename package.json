@@ -14,6 +14,8 @@
     "typecheck": "tsc --noEmit && vue-tsc --noEmit --skipLibCheck",
     "svgo": "svgo -f . -r",
     "clean:cache": "rimraf .eslintcache && rimraf pnpm-lock.yaml && rimraf node_modules && pnpm store prune && pnpm install",
+    "clean:node_modules": "rimraf node_modules",
+    "clean:npm": "rimraf package-lock.json && rimraf node_modules && npm install",
     "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock,build}/**/*.{vue,js,ts,tsx}\" --fix",
     "lint:prettier": "prettier --write  \"src/**/*.{js,ts,json,tsx,css,scss,vue,html,md}\"",
     "lint:stylelint": "stylelint --cache --fix \"**/*.{html,vue,css,scss}\" --cache-location node_modules/.cache/stylelint/",

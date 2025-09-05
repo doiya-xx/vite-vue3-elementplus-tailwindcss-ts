@@ -131,6 +131,43 @@ pnpm dev
 pnpm build
 ```
 
+### 清理 node_modules
+
+当遇到依赖安装问题或需要重新安装依赖时，可以使用以下命令清理 `node_modules` 目录：
+
+#### 使用 pnpm（推荐）
+
+```bash
+# 仅清理 node_modules 目录
+pnpm clean:node_modules
+
+# 完整清理缓存并重新安装（推荐）
+pnpm clean:cache
+```
+
+#### 使用 npm
+
+```bash
+# 清理 package-lock.json 和 node_modules 并重新安装
+npm run clean:npm
+
+# 或者手动执行
+rm -rf node_modules package-lock.json && npm install
+```
+
+#### 通用命令
+
+```bash
+# Unix/Linux/macOS
+rm -rf node_modules
+
+# Windows (命令提示符)
+rmdir /s /q node_modules
+
+# Windows (PowerShell)
+Remove-Item -Recurse -Force node_modules
+```
+
 ## Docker 支持
 
 1. 自定义镜像名为 `vue-pure-admin` 的镜像（请注意下面命令末尾有一个点 `.` 表示使用当前路径下的 `Dockerfile` 文件，可根据实际情况指定路径）

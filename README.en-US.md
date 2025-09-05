@@ -130,6 +130,43 @@ pnpm dev
 pnpm build
 ```
 
+### Clear node_modules
+
+When encountering dependency installation issues or needing to reinstall dependencies, you can use the following commands to clear the `node_modules` directory:
+
+#### Using pnpm (Recommended)
+
+```bash
+# Clear node_modules directory only
+pnpm clean:node_modules
+
+# Complete cache cleaning and reinstall (recommended)
+pnpm clean:cache
+```
+
+#### Using npm
+
+```bash
+# Clear package-lock.json and node_modules then reinstall
+npm run clean:npm
+
+# Or execute manually
+rm -rf node_modules package-lock.json && npm install
+```
+
+#### Universal commands
+
+```bash
+# Unix/Linux/macOS
+rm -rf node_modules
+
+# Windows (Command Prompt)
+rmdir /s /q node_modules
+
+# Windows (PowerShell)
+Remove-Item -Recurse -Force node_modules
+```
+
 ## Docker support
 
 1. Customize the image named `vue-pure-admin` (please note that there is a dot `.` at the end of the command below, indicating that the `Dockerfile` file in the current path is used, and the path can be specified according to the actual situation)
